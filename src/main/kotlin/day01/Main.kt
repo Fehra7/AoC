@@ -1,9 +1,47 @@
+
+
 package day01
+import readFile
+import java.io.File
 
-fun main(args: Array<String>) {
-    println("Hello!")
+/*fun main(args: Array<String>) {
+    val input = readFile("src/main/kotlin/day01/input.txt")
+    val ints = input.map { it.toInt() }
+    var sum = 0
+    val dividedInt = ints.map {
+        var value = it
+        while (value > 0) {
+            value = (value / 3) - 2
+            val value1: Int = value
+            sum += value1
+            
+        }
+        value
+    }
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+}*/
+
+fun calculate(numbers: MutableList<Int>) {
+    var sum = 0
+    for (i in numbers.indices) {
+        while (numbers[i] / 3 - 2 > 0) {
+            numbers[i] = numbers[i] / 3 - 2
+            sum += numbers[i]
+        }
+
+       // sum = 0
+    }
+    println(sum)
+}
+
+fun main() {
+    var numbers = mutableListOf<Int>()
+    val input = File("src/main/kotlin/day01/input.txt").inputStream()
+    input.bufferedReader().useLines { lines ->
+        lines.forEach { line ->
+            numbers.add(line.toInt())
+        }
+    }
+
+    calculate(numbers)
 }
