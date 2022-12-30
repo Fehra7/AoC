@@ -28,14 +28,12 @@ fun calculate(numbers: MutableList<Int>) {
             numbers[i] = numbers[i] / 3 - 2
             sum += numbers[i]
         }
-
-       // sum = 0
     }
     println(sum)
 }
 
 fun main() {
-    var numbers = mutableListOf<Int>()
+    val numbers = mutableListOf<Int>()
     val input = File("src/main/kotlin/day01/input.txt").inputStream()
     input.bufferedReader().useLines { lines ->
         lines.forEach { line ->
