@@ -1,25 +1,6 @@
-
-
 package day01
 import readFile
 import java.io.File
-
-/*fun main(args: Array<String>) {
-    val input = readFile("src/main/kotlin/day01/input.txt")
-    val ints = input.map { it.toInt() }
-    var sum = 0
-    val dividedInt = ints.map {
-        var value = it
-        while (value > 0) {
-            value = (value / 3) - 2
-            val value1: Int = value
-            sum += value1
-            
-        }
-        value
-    }
-
-}*/
 
 fun calculate(numbers: MutableList<Int>) {
     var sum = 0
